@@ -1,3 +1,4 @@
+import { CCol, CContainer, CForm, CFormInput, CRow } from '@coreui/react'
 import Image from 'next/image'
 import styles from './page.module.css'
 
@@ -9,10 +10,27 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js 13!</a>
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
+        {/* CoreUI Checking  */}
+        {/* <div className="">
+          <CForm>
+            <CFormInput
+              type="email"
+              id="exampleFormControlInput1"
+              label="Email address"
+              placeholder="name@example.com"
+              text="Must be 8-20 characters long."
+              aria-describedby="exampleFormControlInputHelpInline"
+            />
+          </CForm>
+        </div> */}
+
+        {/* BootStrap Checking  */}
+        {/* <div className="form-check">
+          <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+          <label className="form-check-label" htmlFor="flexCheckDefault">
+            Default checkbox
+          </label>
+        </div> */}
 
         <div className={styles.grid}>
           <a href="https://beta.nextjs.org/docs" className={styles.card}>

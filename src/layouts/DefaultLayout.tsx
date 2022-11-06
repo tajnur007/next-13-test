@@ -1,4 +1,3 @@
-import CustomHead from "./CustomHead";
 import Footer from "./footer";
 import Header from "./header";
 
@@ -9,12 +8,13 @@ interface DefaultLayoutProps {
 const DefaultLayout = ({ children }: DefaultLayoutProps) => {
 
   return (
-    <html lang="en">
-      <CustomHead />
-      <Header />
-      <body>{children}</body>
-      <Footer />
-    </html>
+    <>
+      <body>
+        <Header />
+        <main> {children} </main>
+        <Footer />
+      </body>
+    </>
   );
 };
 

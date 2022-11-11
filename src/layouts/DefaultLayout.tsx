@@ -1,3 +1,7 @@
+'use client';
+
+import styles from './layout.module.css';
+
 import Footer from "./footer";
 import Header from "./header";
 
@@ -9,7 +13,7 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
 
   return (
     <>
-      <body>
+      <body className={styles.body}>
         <Header />
         <main> {children} </main>
         <Footer />

@@ -1,4 +1,7 @@
+'use client';
+
 import DefaultLayout from '../layouts/DefaultLayout';
+import { RecoilRoot } from 'recoil';
 
 import '@styles/globals.css';
 import '@coreui/coreui/dist/css/coreui.min.css';
@@ -11,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <DefaultLayout>{children}</DefaultLayout>
+      <RecoilRoot>
+        <DefaultLayout>{children}</DefaultLayout>
+      </RecoilRoot>
     </html>
   )
 }

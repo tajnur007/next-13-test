@@ -1,8 +1,19 @@
-import { CCol, CContainer, CForm, CFormInput, CRow } from '@coreui/react'
-import Image from 'next/image'
+'use client';
+
+import { CRow, CCol, CFormInput, CFormLabel } from '@coreui/react'
+import { ChangeEvent } from 'react';
+import { useRecoilState } from 'recoil';
+import { companyNameState } from '../contexts/atoms';
 import styles from './page.module.css'
 
 export default function Home() {
+  const [companyName, setCompanyName] = useRecoilState(companyNameState);
+
+  const handleCompanyNameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setCompanyName(value);
+  }
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -11,18 +22,18 @@ export default function Home() {
         </h1>
 
         {/* CoreUI Checking  */}
-        {/* <div className="">
-          <CForm>
+        <CRow className="mb-3">
+          <CFormLabel htmlFor="companyName" className="col-sm-6 col-form-label"> Enter Company Name: </CFormLabel>
+          <CCol sm={6}>
             <CFormInput
-              type="email"
-              id="exampleFormControlInput1"
-              label="Email address"
-              placeholder="name@example.com"
-              text="Must be 8-20 characters long."
-              aria-describedby="exampleFormControlInputHelpInline"
+              type="text"
+              id="companyName"
+              defaultValue={companyName}
+              placeholder="Vivasoft Limited"
+              onChange={handleCompanyNameChange}
             />
-          </CForm>
-        </div> */}
+          </CCol>
+        </CRow>
 
 
 

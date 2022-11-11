@@ -5,3 +5,7 @@
   text-align: center;
   font-size: 12px;
 }
+
+.footer > strong {
+  color: #0070f3;
+}
